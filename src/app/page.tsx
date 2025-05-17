@@ -6,12 +6,12 @@ import { FaSearch , FaCode , FaShare , FaCheck, FaStar, FaGithub ,  FaLinkedin, 
 import { Menu, X } from 'lucide-react';
 
 
-export default function infonet(){
+export default function Infonet(){
 
 
 
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+const [, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -181,7 +181,7 @@ export default function infonet(){
       </div>
       <span className="text-xl md:text-2xl font-serif font-semibold text-center">Web Development</span>
       <span className="text-sm md:text-base text-center">
-        Boost your website's visibility and drive organic traffic with our Expert SEO services
+        {`Boost your website's visibility and drive organic traffic with our Expert SEO services`}
       </span>
       <span className="flex gap-2 text-sm md:text-base">
         <FaCheck className="text-gray-600" /> Local SEO
@@ -207,7 +207,7 @@ export default function infonet(){
       </div>
       <span className="text-xl md:text-2xl font-serif font-semibold text-center">Search Engine Optimization</span>
       <span className="text-sm md:text-base text-center">
-        Boost your website's visibility and drive organic traffic with our Expert SEO services
+       {` Boost your website's visibility and drive organic traffic with our Expert SEO services`}
       </span>
       <span className="flex gap-2 text-sm md:text-base">
         <FaCheck className="text-gray-600" /> Local SEO
@@ -233,7 +233,7 @@ export default function infonet(){
       </div>
       <span className="text-xl md:text-2xl font-serif font-semibold text-center">Search Engine Optimization</span>
       <span className="text-sm md:text-base text-center">
-        Boost your website's visibility and drive organic traffic with our Expert SEO services
+        {`Boost your website's visibility and drive organic traffic with our Expert SEO services`}
       </span>
       <span className="flex gap-2 text-sm md:text-base">
         <FaCheck className="text-gray-600" /> Local SEO
@@ -259,7 +259,7 @@ export default function infonet(){
       </div>
       <span className="text-xl md:text-2xl font-serif font-semibold text-center">Search Engine Optimization</span>
       <span className="text-sm md:text-base text-center">
-        Boost your website's visibility and drive organic traffic with our Expert SEO services
+        {`Boost your website's visibility and drive organic traffic with our Expert SEO services`}
       </span>
       <span className="flex gap-2 text-sm md:text-base">
         <FaCheck className="text-gray-600" /> Local SEO
@@ -285,7 +285,7 @@ export default function infonet(){
       </div>
       <span className="text-xl md:text-2xl font-serif font-semibold text-center">Search Engine Optimization</span>
       <span className="text-sm md:text-base text-center">
-        Boost your website's visibility and drive organic traffic with our Expert SEO services
+        {`Boost your website's visibility and drive organic traffic with our Expert SEO services`}
       </span>
       <span className="flex gap-2 text-sm md:text-base">
         <FaCheck className="text-gray-600" /> Local SEO
@@ -311,7 +311,7 @@ export default function infonet(){
       </div>
       <span className="text-xl md:text-2xl font-serif font-semibold text-center">Graphics Designing</span>
       <span className="text-sm md:text-base text-center">
-        Boost your website's visibility and drive organic traffic with our Expert SEO services
+        {`Boost your website's visibility and drive organic traffic with our Expert SEO services`}
       </span>
       <span className="flex gap-2 text-sm md:text-base">
         <FaCheck className="text-gray-600" /> Local SEO
@@ -375,7 +375,7 @@ export default function infonet(){
   <div className="flex flex-col items-center gap-6 mt-28">
     <span className="text-5xl font-serif font-semibold text-blue-950">Our Work</span>
     <span className="text-xl font-semibold font-sans text-center max-w-[800px]">
-      Explore Our recent projects and see how we've helped businesses to achieve their digital goals
+      {`Explore Our recent projects and see how we've helped businesses to achieve their digital goals`}
     </span>
   </div>
 
@@ -479,7 +479,7 @@ export default function infonet(){
   <div className="flex flex-col items-center gap-6 mt-28">
     <span className="text-5xl font-serif font-semibold text-blue-950">Clients Testimonials</span>
     <span className="text-xl font-semibold font-sans text-center">
-      Don't just take our words for it, here's what our clients have to say about our services
+      {`Don't just take our words for it, here's what our clients have to say about our services`}
     </span>
   </div>
 
@@ -492,7 +492,7 @@ export default function infonet(){
         <FaStar className="w-8 h-8" />
       </span>
       <span className="text-lg italic font-sans">
-        "Infonet Services helped our business rank #1 on google in 3 months! Their SEO strategy completely transformed our online presence"
+        {`"Infonet Services helped our business rank #1 on google in 3 months! Their SEO strategy completely transformed our online presence"`}
       </span>
       <div className="flex gap-5 items-center">
         <div className="w-[65px] h-16 bg-gray-400 font-bold text-2xl rounded-full flex justify-center items-center">JD</div>
@@ -511,7 +511,7 @@ export default function infonet(){
         <FaStar className="w-8 h-8" />
       </span>
       <span className="text-lg italic font-sans">
-        "The Website they built for our company perfectly captures our brand and significantly increased our conversion rate. Highly recommended!"
+        {`"The Website they built for our company perfectly captures our brand and significantly increased our conversion rate. Highly recommended!"`}
       </span>
       <div className="flex gap-5 items-center">
         <div className="w-[65px] h-16 bg-gray-400 font-bold text-2xl rounded-full flex justify-center items-center">JS</div>
@@ -529,7 +529,7 @@ export default function infonet(){
         <FaStar className="w-8 h-8" /><FaStar className="w-8 h-8" />
       </span>
       <span className="text-lg italic font-sans">
-        "Their Social Media management has been a game changer for our brand. We've seen a 200% increase in engagement, and our sales have never been better."
+        {`"Their Social Media management has been a game changer for our brand. We've seen a 200% increase in engagement, and our sales have never been better."`}
       </span>
       <div className="flex gap-5 items-center">
         <div className="w-[65px] h-16 bg-gray-400 font-bold text-2xl rounded-full flex justify-center items-center">RJ</div>
@@ -550,7 +550,7 @@ export default function infonet(){
     Ready to Grow Your Business?
   </span>
   <span className='text-base sm:text-lg lg:text-xl text-white text-center'>
-    Let's work together to create a digital strategy that drives results and helps you achieve your business goals.
+    {`Let's work together to create a digital strategy that drives results and helps you achieve your business goals.`}
   </span>
 
   <span>
@@ -626,7 +626,7 @@ export default function infonet(){
 
                      <div className="flex flex-col items-center gap-6 mt-28">
                             <span className="text-5xl font-serif font-semibold text-blue-950">Get In Touch </span>
-                            <span className="text-xl font-semibold font-sans text-center">Don't just take our words for it, here's what our clients have to say about our services</span>
+                            <span className="text-xl font-semibold font-sans text-center">{`Don't just take our words for it, here's what our clients have to say about our services`}</span>
                       </div>
 
 
