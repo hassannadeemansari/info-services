@@ -413,7 +413,7 @@ const [, setIsVisible] = useState(false);
       <span className="text-xl font-serif font-semibold">Local Business SEO</span>
       <span>A custom online store with integrated payment solutions and inventory management</span>
       <div className="flex gap-5">
-        <span>Result: 67% sales increase</span>
+        <span>Result: 67% sales Increase</span>
         <span>View Case Study</span>
       </div>
     </div>
