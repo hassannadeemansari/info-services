@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from "next/link"
 import Image from "next/image"
-import { FaSearch , FaCode , FaShare , FaCheck, FaStar, FaGithub ,  FaLinkedin, FaInstagram ,FaMars , FaFacebookMessenger , FaTwitter , FaFacebook} from "react-icons/fa";
+import { FaSearch , FaCode , FaShare , FaCheck, FaStar ,  FaLinkedin, FaInstagram   , FaTwitter , FaFacebook} from "react-icons/fa";
 import { Menu, X } from 'lucide-react';
 
 

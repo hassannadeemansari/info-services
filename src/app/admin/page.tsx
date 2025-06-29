@@ -2,12 +2,21 @@
 
 import { useEffect, useState } from 'react';
 
+// Define the type for each submission
+type Submission = {
+  fullName: string;
+  email: string;
+  phone: string;
+  service: string;
+  message: string;
+};
+
 const AdminPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
-  const [submissions, setSubmissions] = useState<any[]>([]);
+  const [submissions, setSubmissions] = useState<Submission[]>([]);
 
-  const correctPassword = 'infonet123'; // Change this to your own secure password
+  const correctPassword = 'infonet123'; // 🔐 Change this to your own secure password
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -55,7 +64,10 @@ const AdminPage = () => {
       ) : (
         <div className="space-y-6">
           {submissions.map((item, index) => (
-            <div key={index} className="bg-white p-4 rounded shadow-md border border-gray-200">
+            <div
+              key={index}
+              className="bg-white p-4 rounded shadow-md border border-gray-200"
+            >
               <p><strong>Full Name:</strong> {item.fullName}</p>
               <p><strong>Email:</strong> {item.email}</p>
               <p><strong>Phone:</strong> {item.phone}</p>
