@@ -8,6 +8,38 @@ import { Menu, X } from 'lucide-react';
 
 export default function Infonet(){
 
+const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    service: '',
+    message: '',
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const stored = localStorage.getItem('contactSubmissions');
+    const existing = stored ? JSON.parse(stored) : [];
+    const updated = [...existing, formData];
+    localStorage.setItem('contactSubmissions', JSON.stringify(updated));
+
+    setFormData({
+      fullName: '',
+      email: '',
+      phone: '',
+      service: '',
+      message: '',
+    });
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
 
 
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -621,113 +653,123 @@ const [, setIsVisible] = useState(false);
 
 
 
+ <div className='w-full m:w-[1590px] sm:h-[120vh] h-auto flex flex-col items-center gap-16 mt-4'>
+      <div className="flex flex-col items-center gap-6 mt-28">
+        <span className="text-5xl font-serif font-semibold text-blue-950">Get In Touch</span>
+        <span className="text-xl font-semibold font-sans text-center">
+          {`We're here to help you with Web Development, SEO, and Graphic Design.`}
+        </span>
+      </div>
 
-                <div className='w-full m:w-[1590px] sm:h-[100vh] h-[145vh]  flex flex-col  items-center gap-16 mt-4'>
+      <div className="grid grid-cols-1 sm:grid-cols-2 p-16 text-black sm:gap-5 gap-5">
+        <div className="sm:w-[50%] flex flex-col gap-6 mt-5">
+          <h1 className="text-2xl font-semibold">Contact Information</h1>
+          <p className="flex flex-col gap-4">
+            <span className="flex gap-3">📧 Support.infonetservices@gmail.com</span>
+            <span className="flex gap-3">🌐 www.agentiaworld.com</span>
+            <span className="flex gap-3">📞 +92 312 1234567</span>
+          </p>
+        </div>
 
-                     <div className="flex flex-col items-center gap-6 mt-28">
-                            <span className="text-5xl font-serif font-semibold text-blue-950">Get In Touch </span>
-                            <span className="text-xl font-semibold font-sans text-center">{`Don't just take our words for it, here's what our clients have to say about our services`}</span>
-                      </div>
+        <div className="sm:w-full p-5">
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              className="w-full p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-800 border border-[#200f2b]"
+              required
+              value={formData.fullName}
+              onChange={handleChange}
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              className="w-full p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-800 border border-[#200f2b]"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
+              className="w-full p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-800 border border-[#200f2b]"
+              required
+              value={formData.phone}
+              onChange={handleChange}
+            />
+            <select
+              name="service"
+              required
+              value={formData.service}
+              onChange={handleChange}
+              className="w-full p-3 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-800 border border-[#200f2b]"
+            >
+              <option value="">Select a Service</option>
+              <option value="Web Development">Web Development</option>
+              <option value="SEO">SEO</option>
+              <option value="Graphic Design">Graphic Design</option>
+              <option value="Other">Other</option>
+            </select>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              rows={4}
+              className="w-full p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-800 border border-[#200f2b]"
+              required
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
+
+            <button
+              type="submit"
+              className="relative overflow-hidden w-full h-12 font-semibold text-white bg-blue-600 rounded-md transition duration-300 hover:scale-105 hover:-translate-y-1"
+            >
+              Submit Request
+              <span className="shine" />
+            </button>
+
+            {submitted && (
+              <p className="text-green-600 font-medium mt-2 text-center">
+                ✅ Message submitted successfully!
+              </p>
+            )}
+          </form>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .shine {
+          position: absolute;
+          top: 0;
+          left: -75%;
+          height: 100%;
+          width: 50%;
+          background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          transform: skewX(-20deg);
+          pointer-events: none;
+          animation: shine-move 2.5s ease-in-out infinite;
+        }
+
+        @keyframes shine-move {
+          0% {
+            left: -75%;
+          }
+          100% {
+            left: 125%;
+          }
+        }
+      `}</style>
+    </div>
 
 
-              <div className="grid grid-cols-1 grid-rows-2 sm:grid-cols-2 p-7 sm:grid-rows-1 text-black sm:gap-5">
-                    <div className="sm:w-[50%] flex flex-col gap-8 mt-5">
-                             <h1 className="text-2xl font-semibold">Conatact Information</h1>
-                           <p className="flex flex-col gap-4">
-                             <span className="flex gap-3"> <FaFacebookMessenger className="text-purple-600" /> Support.infonetservices@gmail.com</span>
-                             <span className="flex gap-3">< FaMars className="text-purple-600" /> www.agentiaworld.com</span>
-                           </p>
-                             <ol className="flex gap-3 ">
-                                <li><FaGithub/></li>
-                                <li><FaLinkedin/></li>
-                                <li><FaInstagram/></li>
-                             </ol>
-                         </div>
-
-                         <div className="sm:w-[100%]  p-5"> 
-                         <form className="space-y-4">
-                                   <div className="flex space-x-4">
-                                     <input
-                                       type="text"
-                                       name="firstName"
-                                       placeholder="First Name"
-                                       className="w-1/2 p-3   rounded-md focus:outline-none focus:ring-2 focus:ring-blue-800 border border-[#200f2b]"
-                                       required
-                                     />
-                                     <input
-                                       type="text"
-                                       name="lastName"
-                                       placeholder="Last Name"
-                                       className="w-1/2 p-3  rounded-md focus:outline-none focus:ring-2 focus:ring-blue-800 border border-[#200f2b]"
-                                       required
-                                     />
-                                   </div>
-                                   <input
-                                     type="email"
-                                     name="email"
-                                     placeholder="Email Address"
-                                     className="w-full p-3   rounded-md focus:outline-none focus:ring-2 focus:ring-blue-800 border border-[#200f2b]"
-                                     required
-                                   />
-                                   <textarea
-                                     name="message"
-                                     placeholder="Your Message"
-                                     className="w-full p-3   rounded-md focus:outline-none focus:ring-2 focus:ring-blue-800 border border-[#200f2b]"
-                                     rows={4}
-                                     required
-                                   ></textarea>
-
-
-                                   {/* button  */}
-
-
-                                   <span>
-                              <button
-                                className={`relative overflow-hidden w-full h-12 font-semibold text-white bg-blue-600 rounded-md
-                                  transform transition-all duration-300 ease-in-out
-                                  hover:scale-80 hover:-translate-y-1 `}
-                              >
-                                Get Started Today
-                                <span className="shine" />
-                              </button>
-
-                              <style jsx>{`
-                                .shine {
-                                  position: absolute;
-                                  top: 0;
-                                  left: -75%;
-                                  height: 100%;
-                                  width: 50%;
-                                  background: linear-gradient(
-                                    120deg,
-                                    rgba(255, 255, 255, 0) 0%,
-                                    rgba(255, 255, 255, 0.4) 50%,
-                                    rgba(255, 255, 255, 0) 100%
-                                  );
-                                  transform: skewX(-20deg);
-                                  pointer-events: none;
-                                  animation: shine-move 2.5s ease-in-out infinite;
-                                }
-
-                                @keyframes shine-move {
-                                  0% {
-                                    left: -75%;
-                                  }
-                                  100% {
-                                    left: 125%;
-                                  }
-                                }
-                              `}</style>
-                            </span>
-
-
-
-                          </form>
-                         </div>
-                    </div>
-
-
-            </div>
 
 
 
