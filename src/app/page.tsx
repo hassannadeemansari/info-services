@@ -95,7 +95,7 @@ const [, setIsVisible] = useState(false);
             <Link className="hover:font-bold" href="#">Services</Link>
             <Link className="hover:font-bold" href="#">Portfolio</Link>
             <Link className="hover:font-bold" href="#">Testimonials</Link>
-            <Link className="hover:font-bold" href="#">Contact</Link>
+            <Link className="hover:font-bold" href="#">contact</Link>
             <button className="w-[120px] h-10 bg-orange-600 text-white rounded-xl hover:bg-orange-700 transition">Get Started</button>
           </nav>
 
